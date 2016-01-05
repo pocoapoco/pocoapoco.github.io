@@ -6,7 +6,7 @@ description:  # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://pocoapoco.github.io" # the base hostname & protocol for your site
 github_username:  pocoapoco
-excerpt_separator: <!--more-->
+excerpt_separator:  <!--more-->
 
 
 # Build settings

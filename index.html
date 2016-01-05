@@ -7,38 +7,38 @@ layout: default
   <head>
     <meta charset="utf-8">
     <title>Poco Yang</title>
-    <meat name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400" rel="stylesheet" type="text/css">
     <link href="stylesheet" href="application.css">
-  </head>
-  <body>
+
     <div class="outer-container">
       <div class="inner-container">
-	<img src="assets/mhcat.png" class="the-cat">
+	<img src="assets/mhcat.jpg" class="the-cat">
 
-	<p> Hi, I'm <b>Sijing Yang</b>.</p>
-
+	<p>Hi, I'm <b>Sijing Yang</b>.</p>
+	<p>I live with <a href="http://blog.pokkeboy.com/photo/e974.jpg">Kun</a> in Los Alamos.</p> 
+        <p>Right now I'm on a long business trip in Boston.</p>
       </div>
     </div>
-  </body>
-</html>
+  </head>
+
+  <body>
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
-
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
+    <li>
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+	  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>	  
+	  <h4>{{ post.excerpt }}</h4>
+	</h2>
+    </li>
     {% endfor %}
   </ul>
 
+  </body>
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
+</html>
