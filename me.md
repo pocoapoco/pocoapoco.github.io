@@ -24,4 +24,4 @@ I'm living in Los Alamos with Kun, although physically I'm in Boston doing grad 
 [1]: leo.im
 [2]: /assets/static/xian.png
 
-[^1]: „Well honestly, anything that's mala enough will do! (๑•̀ㅂ•́)و“
+[^1]: „Well honestly, anything mala enough will do! (๑•̀ㅂ•́)و“
