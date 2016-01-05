@@ -21,7 +21,7 @@ By the start of 2016, my interest is in computer science which I'm actively stud
 
 I'm living in Los Alamos with Kun, although physically I'm in Boston doing grad school and internship. Kun and I were born and raised in [Xi'an][2], one of China's most beautifuland ancient cities.
 
-[1]: https://leo.im
+[1]: leo.im
 [2]: /assets/static/xian.png
 
 [^1]: „Well honestly, anything that's mala enough will do!“
