@@ -5,7 +5,7 @@ permalink: /about/
 
 {% include social.html %}
 
-Well, study notes on shuati and other things worth taking notes for if any. ( ﾟｰﾟ)
+Well, study notes on shuati and other things worth taking notes of if any. ( ﾟｰﾟ)
 
 ## Some history
 
@@ -13,7 +13,7 @@ Well, study notes on shuati and other things worth taking notes for if any. ( �
 
 ## This site
 
-The site is borrowed from [Leonard Lamprecht][1]. I hardly changed anything because it's simple, fast and beautiful, looks pretty much what I wanted a blog to be. Also it's built using Jekyll, and everything happens in the local directory and is checked in to git. which is good.
+Special thanks to [Leonard Lamprecht][1], from whom the design of this site is borrowed from. I hardly changed anything because it's simple, fast and beautiful, looks pretty much what I wanted a blog to be. Also it's built using Jekyll, and everything happens in the local directory and is checked into Git. which is good.
 
 ## What else?
 
