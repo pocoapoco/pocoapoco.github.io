@@ -17,11 +17,11 @@ The site is borrowed from [Leonard Lamprecht][1]. I hardly changed anything beca
 
 ## What else?
 
-By the start of 2016, my interest is in computer science which I'm actively studying and hope to have a career with. I also like reading novels (reading less often lately because studying is taking a higher priority and most of my time), numbingly spicy hot pot[^1], oyster mushrooms, clementines and milk bubble tea. Besides that, I enjoy playing good games such as limbo, monument valley, civilization V, does not commute, etc.
+By the start of 2016, my interest is in computer science which I'm actively studying and hope to have a career with. I also like reading novels (less often lately though since shuati is taking a higher priority and most of my time if you believe it), numbingly spicy hot pot[^1], oyster mushrooms, clementines and milk bubble tea. Besides that, I enjoy playing good games such as limbo, monument valley, civilization V, does not commute, etc.
 
-I'm living in Los Alamos with Kun, although physically I'm in Boston doing grad school and internship. Kun and I were born and raised in [Xi'an][2], one of China's most beautifuland ancient cities.
+I'm living in Los Alamos with Kun, although physically I'm in Boston doing grad school and internship. Kun and I were born and raised in [Xi'an][2], one of China's most beautiful and ancient cities.
 
 [1]: leo.im
 [2]: /assets/static/xian.png
 
-[^1]: „Well honestly, anything that's mala enough will do!“
+[^1]: „Well honestly, anything that's mala enough will do! (๑•̀ㅂ•́)و“
