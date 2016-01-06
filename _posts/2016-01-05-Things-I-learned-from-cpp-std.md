@@ -24,12 +24,13 @@ ForwardIt unique(ForwardIt first, ForwardIt last)
     ForwardIt result = first;
     while (++first != last) {
         if (!(*result == *first) && ++result != first) {
-            *result = std::move(*first); [^1]
+            *result = std::move(*first);
         }
     }
     return ++result;
 }
 ```
+std::move [^1]
 
 [^1]: „std::move是用于减少copy的verbosity或runtime overhead的一种可称之为destructive read的操作——将资源从地址A“倾倒”进地址B。[Move semantics][1]“
 
