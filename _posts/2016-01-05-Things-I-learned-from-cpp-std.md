@@ -16,7 +16,7 @@ result左边一定不存在任何重复的元素；
 first右边所有的元素一定未被访问；
 result和first中间所有的元素一定是重复和多余的。
 
-```cpp
+```c_cpp
 template<class ForwardIt>
 ForwardIt unique(ForwardIt first, ForwardIt last)
 {
