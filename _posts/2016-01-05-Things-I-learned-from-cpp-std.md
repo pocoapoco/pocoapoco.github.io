@@ -16,7 +16,7 @@ result左边一定不存在任何重复的元素；
 first右边所有的元素一定未被访问；
 result和first中间所有的元素一定是重复和多余的。
 
-```
+```cpp
 template<class ForwardIt>
 ForwardIt unique(ForwardIt first, ForwardIt last)
 {
@@ -34,6 +34,6 @@ ForwardIt unique(ForwardIt first, ForwardIt last)
 ```
 std::move [^1]
 
-[^1]: std::move是用于减少copy的verbosity或runtime overhead的一种可称之为destructive read的操作——将资源从地址A“倾倒”进地址B。See [Move semantics][1]
+[^1]: std::move是用于减少copy的verbosity或runtime overhead的一种可称之为destructive read的操作——将资源从地址A“倾倒”进地址B。See [*Move semantics*][1]
 
 [1]: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2027.html#Move_Semantics
