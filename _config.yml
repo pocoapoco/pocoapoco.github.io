@@ -1,0 +1,45 @@
+# General
+name: poco notebook
+description: personal study notes and misc
+url: http://pocoapoco.github.io
+# google_verify: WfHNxUaAd-tBjGYLYIJfhHp4x4mCPkeSZedrHjDjgxo
+
+author:
+  name: poco yang
+  email: pocoapoco.yang@gmail.com
+  uri: http://pocoapoco.github.io/about/
+
+# Build
+markdown: kramdown
+kramdown:
+  input: GFM
+sass:
+  style: :compressed
+  sass_dir: _includes/sass
+
+#Other
+permalink: /notes/:title
+timezone: America/Denver
+include: [ 'robots.txt' ]
+exclude: [ 'LICENSE', 'README.md', 'CNAME', 'vendor', 'Gemfile' ]
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Self explaining
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "null"
+  -
+    scope:
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "post"
