@@ -1,6 +1,6 @@
 ---
 title: Things I learned from cpp std
-date: 2016-01-05 19:37
+date: 2016-01-05 22:37
 ---
 
 ## Remove duplicates from sorted array in place
