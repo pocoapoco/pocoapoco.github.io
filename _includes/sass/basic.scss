@@ -252,6 +252,26 @@ table {
 
 }
 
+.table-bordered {
+  border: 1px solid $table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+	border: 1px solid $table-border-color;
+      }
+    }
+  }
+  thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
 iframe {
   width: 100%;
 }
