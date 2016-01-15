@@ -9,7 +9,7 @@ date: 2016-01-14 12:58
 
 如果你不知道你的pattern长啥样（比方说只有匹配成功时它会“叮！”一下你这样），这将是唯一的算法。因为tape上的symbol不可预测且无限长，你不能keep memory of it；每轮局部匹配一旦结束，你完全不知道之前发生过什么。只能盲目地一次一格往后爬，并且每次都退回到窗口的头部重新比起。
 
-然而pattern长什么样你其实是知道的。一个直观的例子：你的pattern="ABBAB"，如果发生了mismatch，你一点儿都不想回头看，希望最好能直接把窗口头部滑动到当前局部指针所在的位置。假设mismatch出现在pattern[4] = "B"，那么0~3对应的tape上的symbol一定是“ABBA”, 你有足够的信心不用把窗口的头部拖回pattern[0+1] = "B"那么左，但是你的信心只够你把它拖到pattern[3] = "A"，而再往右就不再安全了。“<b>从当前的mismatch发生在pattern的什么位置推断出下一轮匹配中窗口相对tape最多有必要回退多少格</b>”这个信息，就encode在你的pattern的具体排列方式里；而且这个信息完全独立于你的input string长啥样。基本上，从pattern里compile这个信息就是KMP做的事情。
+然而pattern长什么样你其实是知道的。一个直观的例子：你的pattern="ABBAB"，如果发生了mismatch，你一点儿都不想回头看，希望最好能直接把窗口头部滑动到当前局部指针所在的位置。假设mismatch出现在pattern[4] = "B"，那么0~3对应的tape上的symbol一定是“ABBA”, 你有足够的信心不用把窗口的头部拖回pattern[0+1] = "B"那么左，但是你的信心只够你把它拖到pattern[3] = "A"，再往右就不再安全了。“<b>从当前的mismatch发生在pattern的什么位置推断出下一轮匹配中窗口相对tape最多有必要回退多少格</b>”这个信息，就encode在你的pattern的具体排列方式里；而且这个信息完全独立于你的input string长啥样。基本上，从pattern里compile这个信息就是KMP做的事情。
 
 ## KMP search method
 
@@ -18,18 +18,20 @@ date: 2016-01-14 12:58
 假设我已经有了一个黑盒子F替我计算i -> F(i) = 如果将窗口头部一口气拖到m+i，最多有必要回退多少格（而不总是i-1）without leaving any potential matches unchecked。F(i)可分为两种情况：
 
 1. edge case: i = 0。局部指针还没来得及动这轮匹配就fail了，回到全局看下一个。F(i)记为-1;
-2. otherwise, mismatch前的symbol全部为match，由此可推断出最多有必要回退的格数F(i)（这才是KMP的精髓，下面一节讨论）。如果回退格数不为0，意味着之前已匹配好的pattern segment中存在重复的sub-pattern，我们不敢全部跳过，必须回到这个sub-pattern重复的地方再检查一遍。
+2. otherwise, mismatch前的pattern segment全部match，根据这部分partial match长啥样便可推断出最多有必要回退的格数F(i)——这才是KMP的精髓。在明白这个精髓到底是咋回事之前，现在就让我们暂且相信黑盒子的计算是正确的——如果F(i) = 0，黑盒子告诉你前面没有一个symbol值得回头（Intuitively这只有一个可能：前面的匹配的partial match中没有一个重复的symbol）；如果F(i)不为0，说明之前的partial match中存在重复的sub-pattern，最好回到这个sub-pattern重复的地方检查一下。
 
 下一轮匹配开始时：
 
 如果F(i) == -1，如1所述，窗口直接向右挪动一格；
 
-如果F(i) != -1，窗口头部将被拖动到T上的m+i-F(i)处。此时，局部指针没有必要非得从0开始——如2所述，只要回退格数不为0，就意味着需要退回去检查已匹配过的pattern segment中重复的sub-pattern。如上例，"ABBAB"中mismatch发生在pattern[4] = "B"，下一轮匹配开始时，窗口头部从“期望位置”4退回到3，即重复的sub-pattern开始的地方；而正因为这是已匹配过的重复sub-pattern，当同样的sub-pattern被放在这里时，就没有必要再从0匹配一遍了。局部指针将直接跳过刚才退回的长度F(i)，开始下一轮匹配。
+如果F(i) != -1，窗口头部将被拖动到T上的m+i-F(i)处。此时，局部指针没有必要非得从0开始——如2所述，当我们决定退回去一点时，一定是为了检查前面的partial match中重复的sub-pattern。而正因为这重复的sub-pattern已确认匹配过，这一次局部指针没有必要再从0开始匹配一遍，它将直接跳过刚才已确认匹配的长度F(i)，开始下一轮匹配。或者你可以这样想象：mismatch发生后，局部指针卡在tape上保持不动，窗口整体向右滑动；滑着滑着它发现诶，滑进了一个之前已经匹配过的片段，直到被mismatch发生的那个点绊住——这时，下一轮匹配就从这个绊住的点开始。
+
+如上例，"ABBAB"中mismatch发生在pattern[4] = "B",假设对应的tape是"ABBAC"。下一轮匹配开始时，窗口头部从“期望位置”4退1回到3，即重复的sub-pattern"A"开始的地方；局部指针跳过sub-pattern中已确认匹配的长度1，从pattern[0+1]开始。
 
 
 ```
 public int strStr(String haystack, String needle) 
-{  
+        {  
         int m = 0;
         int i = 0;
                 
@@ -90,7 +92,7 @@ i = 1时，只有第0个symbol被匹配，prefix不能自己重复自己，F(i) 
 从i = 2开始，因为mismatch发生在i，我们比较i-1(potential suffix的latest candidate)和cnd(potential suffix匹配的prefix对应的target)指向的symbol：
 
 1. 如果二者相等，意味着一个等于prefix的suffix已经找到。此时F(i) = 当前suffix的长度，然后cnd和i一起后移，期待找到更长的suffix；
-2. 如果二者不相等，而cnd已不在头部，意味着之前已经找到了一个suffix，而此刻走出了它的边界。虽然已经不在一个有效的suffix内，但由于之前suffix的存在，可以roll back。此时cnd = F(cnd);
+2. 如果二者不相等，而cnd已不在头部，意味着之前已经找到了一个等于prefix的suffix，而此刻走出了它的边界。这时，如果找到的这个suffix内部不存在重复的nested sub-pattern，那么确认匹配的片段决定了suffix已经没可能等于prefix，cnd可以直接roll back到0了。可是如果suffix内部也存在重复的sub-pattern呢？这就需要roll back到当初创建这个nest在suffix里的sub-pattern的时点，看看退到哪里是安全的。此时cnd = F(cnd);
 3. 如果二者不相等且cnd在头部，意味着当前并没有任何potential suffix等于pattern prefix，没必要回头检查。此时F(i) = 0。
 
 ```
@@ -99,21 +101,21 @@ private void constructTable(String word, int[] F)
     F[0] = -1;
     F[1] = 0;
     
-    int pos = 2;
+    int i = 2;
     int cnd = 0;    
-    while (pos < word.length())
+    while (i < word.length())
     {
-        if (word.charAt(pos-1) == word.charAt(cnd))
-            F[pos++] = ++cnd;
+        if (word.charAt(i-1) == word.charAt(cnd))
+            F[i++] = ++cnd;
         else if (cnd > 0)
             cnd = F[cnd];
         else //cnd == 0
-            F[pos++] = 0;
+            F[i++] = 0;
     }
 }
     
 ```
-上述推理中唯一比较难以理解的是当cnd > 0时，cnd = F[cnd]。如果用deterministic finite automaton的思维方式来看这个算法，就容易理解了。这个明天再接着写
+上述推理中唯一比较绕的是当cnd > 0时，cnd = F[cnd]。如果用deterministic finite automaton的思维方式来看这个算法，就容易理解多了。这个明天再接着写
 
 ## KMP in terms of DFA
 
