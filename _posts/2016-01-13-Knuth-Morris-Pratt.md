@@ -18,7 +18,7 @@ date: 2016-01-14 12:58
 假设我已经有了一个黑盒子F替我计算i -> F(i) = 如果将窗口头部一口气拖到m+i，最多有必要回退多少格（而不总是i-1）without leaving any potential matches unchecked。F(i)可分为两种情况：
 
 1. edge case: i = 0。局部指针还没来得及动这轮匹配就fail了，回到全局看下一个。F(i)记为-1;
-2. otherwise, mismatch前的pattern segment全部match，根据这部分partial match长啥样便可推断出最多有必要回退的格数F(i)——这才是KMP的精髓。在明白这个精髓到底是咋回事之前，现在就让我们暂且相信黑盒子的计算是正确的——如果F(i) = 0，黑盒子告诉你前面没有一个symbol值得回头（Intuitively这只有一个可能：前面的匹配的partial match中没有一个重复的symbol）；如果F(i)不为0，说明之前的partial match中存在重复的sub-pattern，最好回到这个sub-pattern重复的地方检查一下。
+2. otherwise, mismatch前的pattern segment全部match，根据这部分partial match长啥样便可推断出最多有必要回退的格数F(i)——这才是KMP的精髓。在明白这个精髓到底是咋回事之前，现在就让我们暂且相信黑盒子的计算是正确的——如果F(i) = 0，黑盒子告诉你前面没有一个symbol值得回头（Intuitively这只有一个可能：前面的partial match中没有一个重复的symbol）；如果F(i)不为0，说明之前的partial match中存在重复的sub-pattern，最好回到这个sub-pattern重复的地方检查一下。
 
 下一轮匹配开始时：
 
@@ -75,19 +75,21 @@ public int strStr(String haystack, String needle)
 
 -
 
-KMP快就快在尽量不回头看。如果它回头看，那一定是因为非这么做不可。也就是说，第一个mismatch之前已匹配的pattern segment中存在一个重复的sub-pattern。这个sub-pattern一定是我们的pattern从头部开始的某个长度的segment——称之为prefix。KMP要做的就是在下一轮匹配开始时把窗口的头部拖到这个重复的prefix开始的地方。
+KMP快就快在尽量不回头看。如果它回头看，那一定是因为非这么做不可。也就是说，第一个mismatch之前的partial match中存在一个重复的sub-pattern。这个sub-pattern一定是pattern从头部开始的某个长度的片段——称之为prefix。KMP要做的就是在下一轮匹配开始时把窗口的头部拖到这个重复的prefix开始的地方。
 
 prefix里可能还有nested sub-pattern，往回拖多少才能保证安全而又不多余呢？
 
 答案就是：length of <b>longest</b> proper prefix of pattern segment that is also a proper suffix of it, for index 0 ~ i-1.
 
+longest听起来简单嗦？事实上各种情况组合千变万化，试一下就知道，只要稍微复杂一点儿，连肉眼都很难识别。
+
 -
 
-现在这里有一个pattern，用一个指针cnd指向头部的symbol，然后从0开始向后逐个计算mismatch发生在i时，i之前的pattern segment中的longest prefix that is also a suffix = F(i)，保存在一个table中。
+现在这里有一个pattern，用一个指针cnd指向头部的symbol，然后从0开始向后逐个计算mismatch发生在i时，i之前的partial match中的F(i) = longest prefix that is also a suffix，保存在一个table中。
 
 i = 0时，前面已经分析过，F(i) = -1;
 
-i = 1时，只有第0个symbol被匹配，prefix不能自己重复自己，F(i) = 0; 
+i = 1时，只有第0个symbol被匹配，prefix不能自己重复自己(否则与brute force有何异)，F(i) = 0; 
 
 从i = 2开始，因为mismatch发生在i，我们比较i-1(potential suffix的latest candidate)和cnd(potential suffix匹配的prefix对应的target)指向的symbol：
 
