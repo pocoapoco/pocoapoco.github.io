@@ -57,7 +57,6 @@ follow()/unfollow(): O(1)
 
 
 ```
-
 public class Twitter {
     
     private static int TIMESTAMP = 0;
@@ -139,7 +138,6 @@ public class Twitter {
         usersFollowees.put(followerId, followees);
     }
     
-    /** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */
     public void unfollow(int followerId, int followeeId) {
         if (followerId == followeeId) return;
         
@@ -151,17 +149,7 @@ public class Twitter {
     }
 }
 
-/**
- * Your Twitter object will be instantiated and called as such:
- * Twitter obj = new Twitter();
- * obj.postTweet(userId,tweetId);
- * List<Integer> param_2 = obj.getNewsFeed(userId);
- * obj.follow(followerId,followeeId);
- * obj.unfollow(followerId,followeeId);
- */
-
- ```
-
+```
 
 --
 
