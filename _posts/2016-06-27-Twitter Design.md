@@ -26,10 +26,10 @@ Map<Integer, List<Integer>>: // 用户map成该用户自己发的贴
 
 时间开销：
 
-postTweet(): O(Y*lg(N*X))
+postTweet(): O(Y\*lg(N\*X))
 
-getNewsFeed(): O(lg(N*X))
+getNewsFeed(): O(lg(N\*X))
 
-follow()/unfollow(): O(N*lg(N*X))
+follow()/unfollow(): O(N\*lg(N\*X))
 
 这个方法里有明显的愚蠢之处。今天太晚了明天再接着写。
