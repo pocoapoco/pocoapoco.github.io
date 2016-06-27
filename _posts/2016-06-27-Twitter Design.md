@@ -17,12 +17,19 @@ leetcode新出了一道很有趣的题355.Design Twitter。这个简易版的twi
 假设每人平均发帖N，follow X人， 被Y人follow，那么这种方法所需的资源和开销：
 
 需要维护的field：
+
 Map<Integer, Set<Integer>>; // 用户map成用户的followers
+
 Map<Integer, PriorityQueue<Tweet>>; // 用户map成该用户收到的news feed
+
 Map<Integer, List<Integer>>: // 用户map成该用户自己发的贴
 
+时间开销：
+
 postTweet(): O(Y*lg(N*X))
+
 getNewsFeed(): O(lg(N*X))
+
 follow()/unfollow(): O(N*lg(N*X))
 
 这个方法里有明显的愚蠢之处。今天太晚了明天再接着写。
