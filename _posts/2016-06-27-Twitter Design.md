@@ -51,7 +51,7 @@ Map<Integer, List<Integer>>: // 用户map成该用户自己发的贴
 
 postTweet(): O(1)
 
-getNewsFeed(): O(X)
+getNewsFeed(): O(X\*lgN)
 
 follow()/unfollow(): O(1)
 
@@ -154,5 +154,7 @@ public class Twitter {
 ```
 
 --
+
+总结一下：解法1用一个整体而言更笨拙的模型、更大的空间开销、post和follow／unfollow的低效换来了getNewsFeed lg级别的时间复杂度。这种牺牲并不值得，因为post、follow／unfollow比getNewsFeed频繁得多这样的假设，对于twitter这样的社交平台来说似乎是非常合理的（如果是qq的话那就是另一回事了）。基于这个假设，解法2把开销迁移到了getNewsFeed上；对于那些没发过几个贴也没什么人follow、然而一口气follow了超多人的用户，解法2的优越性就弱得多了。（这样说起来的话每个社交平台似乎有相当一部分用户是由这种人构成的。。）
 
 用一个不太精确的类比：第一个开销大的“即时收听”模式相当于TCP，每个包都要当场保证精确发送到目标地址；第二个开销小的“延迟收听”模式相当于UDP,包就在系统里到处飞，需要的时候再自己去捡。不过需要重新复习一下网络知识才能确定这个类比到底有多不恰当。。
