@@ -1,6 +1,6 @@
 ---
 title: Inverse index mapping
-date: 2016-09-11 15:40
+date: 2016-09-11 11:40
 ---
 
 今天看到一道很有趣的题目：
