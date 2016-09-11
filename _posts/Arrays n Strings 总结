@@ -1,0 +1,55 @@
+---
+title: Arrays n Strings 总结
+date: 2016-07-19 16:02
+---
+
+非常灵活且容易出错的一类题。leetcode上这种题大致可分为以下几类：
+
+1. 字符串模式匹配
+2. 字符串计算式parsing
+3. array search and manipulation
+4. sequence generation
+5. format conversion
+
+## 字符串模式匹配：
+1. 和palindrome有关的分奇偶两种情况讨论；
+2. 涉及模式匹配通常至少一个hash table，keyset已知时用固定长度数组代替；
+
+# 005 longest palindrome substring
+  一个palindrome和它的子串／所在的母串是否为palindrome没有任何关系，所以必须遍历所有可能的子串。
+
+# 014 longest common prefix
+  从首个word开始不断做减法的过程
+
+# 028 strStr
+  详见KMP
+
+# 049 group anagrams
+  为所有词语可能的anagrams定义一个标准形：e.g. 以sorted order排列。
+
+# 058 length of last word
+# 093 restore ip addresses
+# 151 reverse words in a string
+# 187 repeated DNA sequences
+# 205 isomorphic strings
+# 242 valid anagram
+# 290 word pattern
+# 345 reverse vowels of string
+
+
+## 字符串计算式parsing
+
+# 043 multiply strings
+# 066 plus one
+# 067 add binary
+# 165 compare version number
+# fraction to recurring decimal
+
+
+## array search and manipulation
+1. 用loop invariant分析程序的状态，证明解法的正确性
+2. 
+
+# 026 remove duplicates from sorted array（每个duplicate只留一个）
+# 080 remove duplicates from sorted array 2（每个duplicate可留俩）
+
