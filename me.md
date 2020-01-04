@@ -4,25 +4,16 @@ permalink: /about/
 ---
 
 {% include social.html %}
+Hello, this is Sijing! It's the beginning of 2020 and one of my new year's resolutions is to start a blog again soooo-- here it is. ( ﾟｰﾟ)
 
-Well, study notes on shuati and other things worth taking notes of if any. ( ﾟｰﾟ)
-
-## Some history
-
-// Not implemented yet.
 
 ## This site
 
-The design of this site is by [Leonard Lamprecht][1]. I hardly changed anything because it's simple, fast and precise. It's built using Jekyll, although I'm not using Jekyll's build tools.
+Things that I do, eat, read, and think about.
 
 ## What else?
 
-By the start of 2016, my interest is in computer science which I'm actively studying and hope to have a career with. I also like reading novels, by Graham Greene, Guxiang and John Irving, particularly (less often lately though since shuati is taking a higher priority and most of my time), numbingly spicy hot pot[^1], oyster mushrooms, clementines and milk bubble tea. Besides that, I enjoy playing good games such as limbo, monument valley, civilization V, does not commute, etc.
+I live in New York and am enjoying it, because it's probably the most walkable city in the United States, food is fantastic, and I like it that it's (quote from a bus billboard) "a city where everyone has a PhD in not giving a shit". I was born and raised in [Xi'an][2], one of China's most beautiful and ancient cities.
 
-I'm living in Los Alamos with [Kun][3], although physically I'm in Boston doing grad school and internship. Kun and I were born and raised in [Xi'an][2], one of China's most beautiful and ancient cities.
-
-[1]: http://leo.im
 [2]: /assets/static/xian.png
-[3]: http://liuk.github.io
 
-[^1]: „Well honestly, anything mala enough will do! (๑•̀ㅂ•́)و“

@@ -1,11 +1,11 @@
 # General
-name: poco notebook
-description: personal study notes and misc
+name: poco's notebook
+description: personal blog
 url: http://pocoapoco.github.io
 # google_verify: WfHNxUaAd-tBjGYLYIJfhHp4x4mCPkeSZedrHjDjgxo
 
 author:
-  name: poco yang
+  name: poco
   email: pocoapoco.yang@gmail.com
   uri: http://pocoapoco.github.io/about/
 
