@@ -143,13 +143,13 @@ span[data-note] {
     text-decoration: none;
     text-transform: lowercase;
     font-weight: 700;
-    height: 90px;
-    width: 90px;
+    height: 75px;
+    width: 75px;
     font-size: 1.5em;
-    border-radius: 90px;
+    border-radius: 75px;
     display: inline-block;
     text-align: center;
-    line-height: 90px;
+    line-height: 75px;
   }
 
   @media (min-width: 768px) {
@@ -168,10 +168,10 @@ span[data-note] {
       transition: transform 0.4s;
       -webkit-transition: -webkit-transform 0.4s;
       box-sizing: border-box;
-      line-height: 100px;
-      height: 100px;
-      width: 100px;
-      border-radius: 100px;
+      line-height: 80px;
+      height: 80px;
+      width: 80px;
+      border-radius: 80px;
 
       &:hover {
         transform: scale( 1.2 );
