@@ -13,7 +13,7 @@ Things that I do, eat, read, and think about.
 
 ## What else?
 
-I live in New York and am enjoying it, because it's one of the most walkable city in the world, food is fantastic, and I like that it's (quote from a bus billboard) "a city where everyone has a PhD in not giving a shit". I was born and raised in [Xi'an][2], one of China's most beautiful and ancient cities.
+I'm living in New York. It's one of the most walkable cities I've been to, the food is fantastic, and I like that it's (quote from a bus billboard) "a city where everyone has a PhD in not giving a shit". I was born and raised in [Xi'an][2], one of China's most beautiful and ancient cities.
 
 [2]: /assets/static/xian.png
 
