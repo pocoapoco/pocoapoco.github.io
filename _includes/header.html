@@ -2,10 +2,10 @@
 
   {% if page.url == '/index.html' or page.url == '/' %}
     {% assign link = '/about' %}
+    <a href="{{ link }}">about me</a>
   {% else %}
     {% assign link = '/' %}
+    <a href="{{ link }}">back</a>
   {% endif %}
-
-  <a href="{{ link }}">About me</a>
 
 </aside>
