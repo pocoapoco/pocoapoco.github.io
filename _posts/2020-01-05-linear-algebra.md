@@ -41,7 +41,7 @@ det(A - &lambda;I) = 0
 
 invertibility vs. diagonalizability: invertible if eigenvalue != 0; diagonalizable if we have n independent eigenvectors
 
-矩阵乘法 using eigenvalue matrix and eigenvector matrix: Fibonacci numbers (turn a second order problem into a first order problem by letting u<sub>k</sub> = [F<sub>k+1</sub>, F<sub>k</sub>]<sup>T</sup>, then u<sub>k+1</sub> = Au<sub>k</sub> 啊写不动了明天再接着写
+powers of A using eigenvalue matrix and eigenvector matrix: Fibonacci numbers (turn a second order problem into a first order problem by letting u<sub>k</sub> = [F<sub>k+1</sub>, F<sub>k</sub>]<sup>T</sup>, then u<sub>k+1</sub> = Au<sub>k</sub> 啊写不动了明天再接着写
 
 
 
