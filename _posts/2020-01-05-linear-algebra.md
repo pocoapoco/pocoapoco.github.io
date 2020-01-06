@@ -7,19 +7,19 @@ date: 2020-01-05 00:45
 
 这门课我比较喜欢的是视频和quiz，另外用粉笔写板书不知道为什么看起来特别让人愉快。不太喜欢的是strang写的教材那种比较意识流的风格。所以更好的服用方法大概是要配合一本更成体系一点的数学书吧。anyhoo～这里来写一下这门课的笔记：
 
-Chapter 1 - 2: row form & column form, 一些花式matrix factorization
+### 前1/3: Ax = b in steady state problems
+
+## Chapter 1 - 2: row form & column form, 一些花式matrix factorization
 
 row form: components of Ax are inner products of rows of A. （R^n内多条直线的交点
 column form: Ax is a combination of columns of A. （向量加法
 
-###前1/3: Ax = b in steady state problems
-
-##Chapter 3: vector space, subspace, Ax = 0, Ax = b, linear independence
+## Chapter 3: vector space, subspace, Ax = 0, Ax = b, linear independence
 
 For mxn matrix A: N(A) is the orthogonal complement of row space C(A<sup>T</sup>) (in R<sup>n</sup>), N(A<sup>T</sup>) is the orthogonal complement of the column space C(A) (in R<sup>m</sup>)
 reduced row echelon form: quiz里有一道很好的概念题-- forward elimination changes Ax = b to a row reduced Rx = d, the complete solution is x = [4, 0, 0]<sup>T</sup> + c<sub>1</sub>[2, 1, 0]<sup>T</sup> + c<sub>2</sub>[5, 0, 1]<sup>T</sup>. 问：1）what is the 3x3 reduced row echelon matrix R and what is d? 2) if the process of elimination subtracted 3 times row 1 from row 2 and then 5 times row 1 from row 3, what matrix connects R and d to the original A and b? Use this matrix to find A and b.
 
-##Chapter 4: 最小二乘法, gram-schmidt
+## Chapter 4: 最小二乘法, gram-schmidt
 
 A<sup>T</sup>A*x* = A<sup>T</sup>b
 A<sup>T</sup> is invertible iff A has linearly independent columns.
@@ -27,13 +27,13 @@ A<sup>T</sup> is invertible iff A has linearly independent columns.
 If Q is square then transpose = inverse.
 A = QR
 
-##Chapter 5 ：行列式, cramer's rule
+## Chapter 5 ：行列式, cramer's rule
 
 cramer's rule is good for algebra but terrible for computation
 
-###中间1/3: Ax = &lambda;x for dynamic problems
+### 中间1/3: Ax = &lambda;x for dynamic problems
 
-##Chapter 6：eigenvalues and eigenvectors
+## Chapter 6：eigenvalues and eigenvectors
 
 det(A - &lambda;I) = 0
 invertibility vs. diagonalizability: invertible if eigenvalue != 0; diagonalizable if we have n independent eigenvectors
