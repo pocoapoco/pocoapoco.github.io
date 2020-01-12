@@ -4,7 +4,7 @@ permalink: /about/
 ---
 
 {% include social.html %}
-Hello, this is Sijing! It's the beginning of 2020 and one of my new year's resolutions is to start a blog again soooo-- here it is. ( ﾟｰﾟ)
+Hi, this is Sijing! It's the beginning of 2020 and one of my new year's resolutions is to start a blog again soooo-- here it is. ( ﾟｰﾟ)
 
 
 ## This site
