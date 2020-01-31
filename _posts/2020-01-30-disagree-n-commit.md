@@ -79,7 +79,7 @@ developer 2: I don't need to pass you the occupation -- you ARE mozart and you k
 
 [场景1: 办公室里]
 
-Sijing: I agree with everything you said.<br>
+developer 1: I agree with everything you said.<br>
         (一边说一边把电脑撕成碎片)
 
 
