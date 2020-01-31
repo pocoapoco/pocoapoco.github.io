@@ -7,7 +7,7 @@ date: 2020-01-30 19:17
 
 然而日常生活中比较多见的是以下三种行为模式：
 
-> 1. agree and do nothing
+> agree and do nothing
 
 [会议室里]
 
@@ -26,7 +26,7 @@ director: 顾的。散会！
 （然后开完会啥也没发生）
 
 
-> 2. agree and rollback
+> agree and rollback
 
 [场景1: 会议室里]
 
@@ -35,26 +35,25 @@ director: 顾的。散会！
 developer 1: You need to send me a request payload that looks like this:<br>
              (在白板上写下来)
 
-             ```
              {
              	"name": ...
              	"address": ...
              	"occupation": ...
              }
-             ```
 
-developer 2: that works.
+
+developer 2: that works!
 
 developer 3: sounds good.
 
 [场景2: 公司聊天群里]
 
-developer 2: Does this json blob work for you?
-             ```
+developer 2: Does this json blob work for you?<br>
+             
              {
              	"humanId": "mozart"
              }
-             ```
+
 
 developer 1: what is "humanId"?
 
@@ -77,7 +76,7 @@ developer 1: and "occupation"?
 developer 2: I don't need to pass you the occupation -- you ARE mozart and you know your occupation 🙂
 
 
-> 3. agree and subotage
+> agree and subotage
 
 [场景1: 办公室里]
 
