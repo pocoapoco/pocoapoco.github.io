@@ -62,8 +62,7 @@ developer 2: an identifier of the entity being represented, it can be used to un
 developer 1: are we sticking to this contract?<br>
              (附上刚才拍的白板照片)
 
-developer 2: that's the same, other than that I'm calling it "humanId" instead of "name", right?<br>
-             I can rename it, doesn't matter
+developer 2: that's the same, other than that I'm calling it "humanId" instead of "name", right? I can rename it, doesn't matter
 
 developer 3: I am fine either way.
 
