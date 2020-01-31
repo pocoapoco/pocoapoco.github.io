@@ -7,7 +7,7 @@ date: 2020-01-30 19:17
 
 然而日常生活中比较多见的是以下三种行为模式：
 
-1. agree and do nothing
+> 1. agree and do nothing
 
 [会议室里]
 
@@ -26,19 +26,22 @@ director: 顾的。散会！
 （然后开完会啥也没发生）
 
 
-2. agree and rollback
+> 2. agree and rollback
 
 [场景1: 会议室里]
 
 (经过1个小时的激烈讨论)
 
-developer 1: You need to send me a request payload that looks like this:
+developer 1: You need to send me a request payload that looks like this:<br>
              (在白板上写下来)
+
+             ```
              {
              	"name": ...
              	"address": ...
              	"occupation": ...
              }
+             ```
 
 developer 2: that works.
 
@@ -47,19 +50,20 @@ developer 3: sounds good.
 [场景2: 公司聊天群里]
 
 developer 2: Does this json blob work for you?
+             ```
              {
              	"humanId": "mozart"
              }
+             ```
 
 developer 1: what is "humanId"?
 
 developer 2: an identifier of the entity being represented, it can be used to uniquely identify a human object, given a universe
 
-developer 1: are we sticking to this contract?
+developer 1: are we sticking to this contract?<br>
              (附上刚才拍的白板照片)
 
-developer 2: that's the same, other than that I'm calling it "humanId" instead of "name", right?
-
+developer 2: that's the same, other than that I'm calling it "humanId" instead of "name", right?<br>
              I can rename it, doesn't matter
 
 developer 3: I am fine either way.
@@ -73,11 +77,11 @@ developer 1: and "occupation"?
 developer 2: I don't need to pass you the occupation -- you ARE mozart and you know your occupation 🙂
 
 
-3. agree and subotage
+> 3. agree and subotage
 
 [场景1: 办公室里]
 
-Sijing: I agree with everything you said.
+Sijing: I agree with everything you said.<br>
         (一边说一边把电脑撕成碎片)
 
 
