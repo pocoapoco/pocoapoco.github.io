@@ -7,7 +7,7 @@ date: 2020-02-02 12:19
 
 <br>
 
-<img src="/assets/static/changwang.png">
+<img style="width:800px;height:600px;" src="/assets/static/changwang.png">
 
 <br>
 
